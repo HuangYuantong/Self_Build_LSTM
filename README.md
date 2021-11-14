@@ -1,21 +1,21 @@
 # Self_Build_LSTM
 <<<<<<< HEAD
-> 这是存放自然语言处理课程期末作业：“自己搭建LSTM结点”,的repository
+ 这是存放自然语言处理课程期末作业：“自己搭建LSTM结点”,的repository
  
 ## **做以下一些说明:**
 
 ## 1、各文件（文件夹）的含义：
-|序号|文件（文件夹）名|类型|内容|
-| :--------:   | :-----:  | :----: |
-|(1)|实验报告-黄元通.docx|Word文件|我的实验报告|
-|(2)|实验报告-黄元通.pdf|pdf文件|pdf版实验报告，内容完全相同|
-|(3)|Code|文件夹|运行实验所需的所有源文件，其中LSTM.py为自己搭建的LSTM类|
-|(4)|LSTM.py|文件|备份，与Code文件下LSTM.py相同|
-|(5)|README.md|文件|仓库说明|
+    |序号|文件（文件夹）名|类型|内容|
+    | :--------:   | :-----:  | :----: |
+    |(1)|实验报告-黄元通.docx|Word文件|我的实验报告|
+    |(2)|实验报告-黄元通.pdf|pdf文件|pdf版实验报告，内容完全相同|
+    |(3)|Code|文件夹|运行实验所需的所有源文件，其中LSTM.py为自己搭建的LSTM类|
+    |(4)|LSTM.py|文件|备份，与Code文件下LSTM.py相同|
+    |(5)|README.md|文件|仓库说明|
 
 ## 2、自己搭建的LSTM类所在文件：“LSTM.py”，该文件可在以下2个位置找到：
-   Self_Build_LSTM/LSTM.py
-   Self_Build_LSTM/Code/LSTM.py
+   Self_Build_LSTM/LSTM.py \n
+   Self_Build_LSTM/Code/LSTM.py \n
   **两个文件完全相同**
    
 ## 3、在程序中使用自定义LSTM的方法：
