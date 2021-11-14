@@ -4,8 +4,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import give_valid_test
-# import _pickle as cpickle
-from LSTM import *
+import _pickle as cpickle
+from LSTM import LSTM
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -75,21 +75,19 @@ class TextLSTM(nn.Module):
     def __init__(self):
         super(TextLSTM, self).__init__()
         self.C = nn.Embedding(n_class, embedding_dim=emb_size)
-        self.LSTM = LSTM(input_size=emb_size, hidden_size=n_hidden)
-        # self.LSTM = nn.LSTM(input_size=emb_size, hidden_size=n_hidden)
+        self.LSTM = LSTM(input_size=emb_size, hidden_size=n_hidden, num_layers=2)
+        # self.LSTM = nn.LSTM(input_size=emb_size, hidden_size=n_hidden, num_layers=2)
         self.W = nn.Linear(n_hidden, n_class, bias=False)
         self.b = nn.Parameter(torch.ones([n_class]))
 
     def forward(self, X):
         X = self.C(X)
-        hidden_state = torch.zeros(1, len(X), n_hidden)  # [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
-        cell_state = torch.zeros(1, len(X), n_hidden)  # [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+        hidden_state = torch.zeros(2, len(X), n_hidden)  # [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+        cell_state = torch.zeros(2, len(X), n_hidden)  # [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
 
         X = X.transpose(0, 1)  # X : [n_step, batch_size, embeding size]
         # outputs, (_, _) = self.LSTM(X)
         outputs, (_, _) = self.LSTM(X, (hidden_state, cell_state))
-        # print(outputs.shape, temp1.shape, temp2.shape, sep='\n')
-        # exit()
         # outputs : [n_step, batch_size, num_directions(=1) * n_hidden]
         # hidden : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
         outputs = outputs[-1]  # [batch_size, num_directions(=1) * n_hidden]
@@ -101,7 +99,6 @@ def train_LSTMlm():
     model = TextLSTM()
     model.to(device)
     print(model)
-
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learn_rate)
 
