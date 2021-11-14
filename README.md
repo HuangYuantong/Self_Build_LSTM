@@ -2,7 +2,7 @@
 
 <<<<<<< HEAD
 
- 这是存放自然语言处理课程期末作业：“自己搭建LSTM结点”的repository
+ **这是存放自然语言处理课程期末作业：“自己搭建LSTM结点”的repository**
  
 ## **做以下三点说明:**
 
@@ -29,7 +29,9 @@
    
 ### 3、在程序中使用自定义LSTM的方法
 
-1. 需要添加语句“from LSTM import LSTM”以使用自定义LSTM
+1. 需要添加语句以下以使用自定义LSTM：
+
+        from LSTM import LSTM
 
 2. 使用如下语句进行使用，其中input_size、hidden_size为必须传入的形参，num_layers可不传入，默认值为1:
 
