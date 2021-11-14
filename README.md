@@ -1,4 +1,5 @@
 # Self_Build_LSTM
+<<<<<<< HEAD
 > 这是存放自然语言处理课程期末作业：“自己搭建LSTM结点”,的repository
  
 ## **做以下一些说明:**
