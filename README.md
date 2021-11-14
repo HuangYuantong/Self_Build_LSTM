@@ -4,7 +4,7 @@
 
  这是存放自然语言处理课程期末作业：“自己搭建LSTM结点”,的repository
  
-## **做以下一些说明:**
+## **做以下三点说明:**
 
 ### 1、各文件（文件夹）的含义
 1. "实验报告-黄元通.docx" Word文件: 我的实验报告
@@ -30,14 +30,15 @@
 1. 需要添加语句“from LSTM import LSTM”以使用自定义LSTM
 
 2. 使用如下语句进行使用，其中input_size、hidden_size为必须传入的形参，num_layers可不传入，默认值为1:
+
         LSTM(input_size=emb_size, hidden_size=n_hidden, num_layers=2)
 
 3. 使用如下语句进行调用，其中从外界指定state初始值的调用其X与(hidden_state, cell_state)可在不同运行设备上，会自动转为在X所在设备:
 
- 使用默认state：
+    使用默认state：
 
-    outputs, (h_n, c_n) = self.LSTM(X)
+        outputs, (h_n, c_n) = self.LSTM(X)
 
- 指定初始state：
+    指定初始state：
 
-    outputs, (h_n, c_n) = self.LSTM(X, (hidden_state, cell_state))
+        outputs, (h_n, c_n) = self.LSTM(X, (hidden_state, cell_state))
