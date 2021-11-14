@@ -16,9 +16,9 @@
 ### 2、自己搭建的LSTM类所在文件：“LSTM.py”
  该文件可在以下2个位置找到：
 
->    Self_Build_LSTM/LSTM.py
+    Self_Build_LSTM/LSTM.py
 
->    Self_Build_LSTM/Code/LSTM.py
+    Self_Build_LSTM/Code/LSTM.py
 
   **两个文件完全相同**
    
@@ -29,6 +29,7 @@
 2. 使用如下语句进行使用，其中input_size、hidden_size为必须传入的形参，num_layers可不传入，默认值为1:
 
     LSTM(input_size=emb_size, hidden_size=n_hidden, num_layers=2)
+
 3. 使用如下语句进行调用，其中从外界指定state初始值的调用其X与(hidden_state, cell_state)可在不同运行设备上，会自动转为在X所在设备:
 
  使用默认state：
