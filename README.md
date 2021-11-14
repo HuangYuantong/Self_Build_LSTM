@@ -7,7 +7,6 @@
 ## **做以下一些说明:**
 
 ### 1、各文件（文件夹）的含义
-
  |序号|文件（文件夹）名|类型|内容|
  | :--------:   | :-----:  | :----: |
  |(1)|实验报告-黄元通.docx|Word文件|我的实验报告|
@@ -17,13 +16,9 @@
  |(5)|README.md|文件|仓库说明|
 
 ### 2、自己搭建的LSTM类所在文件：“LSTM.py”
-
  该文件可在以下2个位置找到：
-
- Self_Build_LSTM/LSTM.py
-
- Self_Build_LSTM/Code/LSTM.py
-
+    Self_Build_LSTM/LSTM.py
+    Self_Build_LSTM/Code/LSTM.py
   **两个文件完全相同**
    
 ### 3、在程序中使用自定义LSTM的方法
